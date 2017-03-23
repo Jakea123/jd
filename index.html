@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>APP下载</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<style>
+	
+</style>
+<body>
+	<div class="js_tap btn ui-download" id="downloadApp" clstag="pageclick|keycount|201604133|100">立即下载</div>
+</body>
+ <script src="js/zepto.js"></script>
+<script src="js/common.js"></script>
+<script src="js/joya.js"></script>
+<script src="js/wl.dev.js"></script>
+<script>
+	var u = navigator.userAgent;
+	var isIos = !!u.match(/\(i[^;]+(U;)?CPU.+Mac OS x/);
+	function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function goAppStore(){
+    	var appStoreUrl = "https://itunes.apple.com/cn/app/%E6%98%93%E9%92%B1%E5%AE%9D/id1164008363?mt=8";
+    	window.location.href = appStoreUrl;
+    }
+    function downloadApk(){
+        goAppStore();
+    } 
+
+    document.getElementById('downloadApp').onclick=function(){
+    	setTimeout(function(){
+    		downloadApk();
+    	},1000)
+    }
+</script>
+</html>
